@@ -1,0 +1,4 @@
+- thread/thread pool
+- buffer
+- select/epoll
+- nonblock
