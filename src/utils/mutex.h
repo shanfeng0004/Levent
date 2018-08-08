@@ -37,7 +37,8 @@ private:
 class MutexGuard : public boost::noncopyable
 {
 public:
-    explicit MutexGuard(Mutex& mutex):mutex_(mutex)
+    explicit MutexGuard(Mutex& mutex)
+        : mutex_(mutex)
     {
         mutex_.Lock();
     }
