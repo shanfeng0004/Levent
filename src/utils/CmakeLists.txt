@@ -1,0 +1,14 @@
+set(base_SRCS
+  )
+
+add_library(levent_utils ${base_SRCS})
+target_link_libraries(levent_utils pthread rt)
+
+install(TARGETS levent_utils DESTINATION lib)
+
+file(GLOB HEADERS "*.h")
+install(FILES ${HEADERS} DESTINATION include/levent/utils)
+
+if(NOT CMAKE_BUILD_NO_EXAMPLES)
+  add_subdirectory(tests)
+endif()
