@@ -20,6 +20,11 @@ public:
         pthread_mutex_destroy(&mutex_);
     }
 
+	pthread_mutex_t* getMutex()
+	{
+		return &mutex_;
+	}
+
     void Lock()
     {
         pthread_mutex_lock(&mutex_);

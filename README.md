@@ -1,5 +1,5 @@
-- thread/thread pool
-- buffer
-- select/epoll
+- thread/thread pool/one loop per thread
+- IObuffer
+- select/epoll/kqueue
 - nonblock
 - tcp/http
