@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.12)
+
 set(base_SRCS
     condition.cpp
   )
@@ -10,6 +12,6 @@ install(TARGETS levent_utils DESTINATION lib)
 file(GLOB HEADERS "*.h")
 install(FILES ${HEADERS} DESTINATION include/levent/utils)
 
-if(NOT CMAKE_BUILD_NO_EXAMPLES)
-  add_subdirectory(tests)
-endif()
+# if(NOT CMAKE_BUILD_NO_EXAMPLES)
+#   add_subdirectory(tests)
+# endif()
