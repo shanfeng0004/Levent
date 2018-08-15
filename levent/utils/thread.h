@@ -7,6 +7,7 @@
 
 namespace levent
 {
+
 class Thread : public boost::noncopyable
 {
 public:
