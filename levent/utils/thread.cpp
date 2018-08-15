@@ -43,7 +43,7 @@ void Thread::Start()
 
 int Thread::Join()
 {
-    pthread_join(pthreadId_, NULL);
+    pthread_join(tid_, NULL);
     joined_ = true;
 }
 
