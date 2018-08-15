@@ -23,10 +23,13 @@ public:
     bool IsStarted() { return started_; }
 
     pid_t Tid() { return tid_; }
-    
+
 private:
     bool started_;
+    bool joined_;
     pid_t tid_;
+    ThreadFunc func_;
+    WaitGroup wg_;
 }
 
 }

@@ -1,22 +1,50 @@
 #include <levent/utils/thread.h>
 
-namespace
+namespace levent
 {
 
-Thread::Thread(ThreadFunc func)
+struct ThreadData
+{
+    pid_t tid;
+    WaitGroup wg;
+    ThreadFunc func;
+}
+
+void ThreadRoutine(void* arg)
+{
+    ThreadData data = static_cast<ThreadData*>(arg);
+    data->func();
+    data->wg.Done(); 
+}
+
+Thread::Thread(ThreadFunc& func, WaitGroup& wg)
+    : started_(false),
+      joined_(false),
+      tid_(0),
+      func_(func),
+      wg_(wg);
 {
 }
 
 Thread::~Thread()
 {
+    if (started_ && !joined_) {
+        pthread_detach(tid_);
+    }
 }
 
-Thread::Start()
+void Thread::Start()
 {
+    ThreadData* data = new ThreadData(tid_, wg_, func_);
+    if (pthread_create(tid_, NULL, ThreadRoutine, data)) {
+        started_ = true;
+    }
 }
 
-Thread::Join()
+int Thread::Join()
 {
+    pthread_join(pthreadId_, NULL);
+    joined_ = true;
 }
 
 }

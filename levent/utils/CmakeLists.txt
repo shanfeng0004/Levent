@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.12)
 
 set(base_SRCS
     condition.cpp
+    wait_group.cpp
+    thread.cpp
   )
 
 add_library(levent_utils ${base_SRCS})
