@@ -196,6 +196,60 @@ condition.cpp.s:
 	$(MAKE) -f CMakeFiles/levent_utils.dir/build.make CMakeFiles/levent_utils.dir/condition.cpp.s
 .PHONY : condition.cpp.s
 
+thread.o: thread.cpp.o
+
+.PHONY : thread.o
+
+# target to build an object file
+thread.cpp.o:
+	$(MAKE) -f CMakeFiles/levent_utils.dir/build.make CMakeFiles/levent_utils.dir/thread.cpp.o
+.PHONY : thread.cpp.o
+
+thread.i: thread.cpp.i
+
+.PHONY : thread.i
+
+# target to preprocess a source file
+thread.cpp.i:
+	$(MAKE) -f CMakeFiles/levent_utils.dir/build.make CMakeFiles/levent_utils.dir/thread.cpp.i
+.PHONY : thread.cpp.i
+
+thread.s: thread.cpp.s
+
+.PHONY : thread.s
+
+# target to generate assembly for a file
+thread.cpp.s:
+	$(MAKE) -f CMakeFiles/levent_utils.dir/build.make CMakeFiles/levent_utils.dir/thread.cpp.s
+.PHONY : thread.cpp.s
+
+wait_group.o: wait_group.cpp.o
+
+.PHONY : wait_group.o
+
+# target to build an object file
+wait_group.cpp.o:
+	$(MAKE) -f CMakeFiles/levent_utils.dir/build.make CMakeFiles/levent_utils.dir/wait_group.cpp.o
+.PHONY : wait_group.cpp.o
+
+wait_group.i: wait_group.cpp.i
+
+.PHONY : wait_group.i
+
+# target to preprocess a source file
+wait_group.cpp.i:
+	$(MAKE) -f CMakeFiles/levent_utils.dir/build.make CMakeFiles/levent_utils.dir/wait_group.cpp.i
+.PHONY : wait_group.cpp.i
+
+wait_group.s: wait_group.cpp.s
+
+.PHONY : wait_group.s
+
+# target to generate assembly for a file
+wait_group.cpp.s:
+	$(MAKE) -f CMakeFiles/levent_utils.dir/build.make CMakeFiles/levent_utils.dir/wait_group.cpp.s
+.PHONY : wait_group.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +266,12 @@ help:
 	@echo "... condition.o"
 	@echo "... condition.i"
 	@echo "... condition.s"
+	@echo "... thread.o"
+	@echo "... thread.i"
+	@echo "... thread.s"
+	@echo "... wait_group.o"
+	@echo "... wait_group.i"
+	@echo "... wait_group.s"
 .PHONY : help
 
 
