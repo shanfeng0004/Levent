@@ -1,10 +1,10 @@
 #ifndef _LEVENT_CONDITION_H__
 #define _LEVENT_CONDITION_H__
 
-#include <levent/utils/mutex.h>
-
 #include <boost/noncopyable.hpp>
 #include <pthread.h>
+
+#include <levent/utils/mutex.h>
 
 namespace levent
 {
@@ -44,7 +44,7 @@ public:
 private:
     pthread_cond_t cond_;
     Mutex& mutex_;
-}
+};
 
 }
 

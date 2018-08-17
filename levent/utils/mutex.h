@@ -20,7 +20,7 @@ public:
         pthread_mutex_destroy(&mutex_);
     }
 
-	pthread_mutex_t* getMutex()
+	pthread_mutex_t* getPthreadMutex()
 	{
 		return &mutex_;
 	}
@@ -37,7 +37,7 @@ public:
 
 private:
     pthread_mutex_t mutex_;
-}
+};
 
 class MutexGuard : public boost::noncopyable
 {
@@ -50,12 +50,12 @@ public:
 
     ~MutexGuard()
     {
-        mutex_.Unlock();
+        mutex_.UnLock();
     }
 
 private:
-    Mutex mutex_;
-}
+    Mutex& mutex_;
+};
 
 }
 

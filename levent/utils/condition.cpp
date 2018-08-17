@@ -1,16 +1,18 @@
+#include <errno.h>
+#include <time.h>
 #include <levent/utils/condition.h>
-#include <levent/utils/mutex.h>
 
 namespace levent
 {
 bool Condition::waitForSeconds(int seconds)
 {
-    pthread_timestruc_t to;
-    to.tv_sec = time(NULL) + seconds;
-    to.tv_nsec = 0;
+    struct timespec to;
+    clock_gettime(CLOCK_REALTIME, &to);
 
-	MutexGuard mg(mutex_)
-	err = pthread_cond_timedwait(&cond_, mutex_.getMutex(), &to);
+    to.tv_sec += to.tv_sec + seconds;
+
+	MutexGuard mg(mutex_);
+	int err = pthread_cond_timedwait(&cond_, mutex_.getPthreadMutex(), &to);
 	if (err == ETIMEDOUT) {
 		return true;
 	}
