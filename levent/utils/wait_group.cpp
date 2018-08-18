@@ -1,6 +1,6 @@
 #include <levent/utils/wait_group.h>
 
-namespace
+namespace levent
 {
 WaitGroup::WaitGroup()
             :mutex_(),
@@ -11,15 +11,17 @@ WaitGroup::WaitGroup()
 
 void WaitGroup::Add()
 {
-    MutexGuard(mutex_);
+    MutexGuard mg(mutex_);
     count_++;
 }
 
 void WaitGroup::Done()
 {
-    MutexGuard(mutex_);
-    count--;
-    cond_.NoticeAll();
+    MutexGuard mg(mutex_);
+    count_--;
+    if (count_ == 0) {
+        cond_.NoticeAll();
+    }
 }
 
 void WaitGroup::Wait()

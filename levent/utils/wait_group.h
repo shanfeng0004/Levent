@@ -4,11 +4,12 @@
 #include <levent/utils/mutex.h>
 #include <levent/utils/condition.h>
 
-namespace
+namespace levent
 {
 
 class WaitGroup : public boost::noncopyable
 {
+public:
     WaitGroup();
 
     ~WaitGroup();
@@ -23,7 +24,7 @@ private:
     Mutex mutex_;
     Condition cond_;
     unsigned int count_;
-}
+};
 
 }
 

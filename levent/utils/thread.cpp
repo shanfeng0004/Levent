@@ -7,12 +7,12 @@ struct ThreadData
 {
     pid_t tid;
     WaitGroup wg;
-    ThreadFunc func;
-}
+    Thread::ThreadFunc func;
+};
 
 void ThreadRoutine(void* arg)
 {
-    ThreadData data = static_cast<ThreadData*>(arg);
+    ThreadData* data = static_cast<ThreadData*>(arg);
     data->func();
     data->wg.Done(); 
 }

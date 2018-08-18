@@ -5,6 +5,8 @@
 #include <boost/noncopyable.hpp>
 #include <pthread.h>
 
+#include <levent/utils/wait_group.h>
+
 namespace levent
 {
 
@@ -13,7 +15,7 @@ class Thread : public boost::noncopyable
 public:
     typedef boost::function<void ()> ThreadFunc;
 
-    explicit Thread(ThreadFunc func);
+    explicit Thread(ThreadFunc& func, WaitGroup& wg);
 
     ~Thread();
 
@@ -31,7 +33,7 @@ private:
     pid_t tid_;
     ThreadFunc func_;
     WaitGroup wg_;
-}
+};
 
 }
 
