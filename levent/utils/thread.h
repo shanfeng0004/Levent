@@ -1,9 +1,10 @@
 #ifndef _LEVENT_THREAD_H__
 #define _LEVENT_THREAD_H__
 
+#include <pthread.h>
+
 #include <boost/function.hpp>
 #include <boost/noncopyable.hpp>
-#include <pthread.h>
 
 #include <levent/utils/wait_group.h>
 
