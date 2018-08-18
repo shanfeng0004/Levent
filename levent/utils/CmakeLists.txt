@@ -2,6 +2,7 @@ set(base_SRCS
     condition.cpp
     wait_group.cpp
     thread.cpp
+    thread_pool.cpp
   )
 
 add_library(levent_utils ${base_SRCS})
