@@ -1,4 +1,6 @@
+lib/
 CMakeFiles/
 *.cmake
+*.swp
 CMakeCache.txt
 Makefile

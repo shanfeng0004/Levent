@@ -15,22 +15,22 @@ class Thread : public boost::noncopyable
 public:
     typedef boost::function<void ()> ThreadFunc;
 
-    explicit Thread(ThreadFunc& func, WaitGroup& wg);
+    explicit Thread(ThreadFunc& func);
 
     ~Thread();
 
     void Start();
 
-    int Join();
+    void Join();
 
     bool IsStarted() { return started_; }
 
-    pid_t Tid() { return tid_; }
+    pthread_t PthreadId() { return pthread_id_; }
 
 private:
     bool started_;
     bool joined_;
-    pid_t tid_;
+    pthread_t pthread_id_;
     ThreadFunc func_;
     WaitGroup wg_;
 };

@@ -5,46 +5,54 @@ namespace levent
 
 struct ThreadData
 {
-    pid_t tid;
-    WaitGroup wg;
+public:
+    ThreadData(const Thread::ThreadFunc& func, WaitGroup* wg)
+        : func(func),
+          wg(wg) {}
+
+public:
     Thread::ThreadFunc func;
+    WaitGroup* wg;
 };
 
-void ThreadRoutine(void* arg)
+void* ThreadRoutine(void* arg)
 {
     ThreadData* data = static_cast<ThreadData*>(arg);
     data->func();
-    data->wg.Done(); 
+    data->wg->Done();
+
+    return NULL;
 }
 
-Thread::Thread(ThreadFunc& func, WaitGroup& wg)
+Thread::Thread(ThreadFunc& func)
     : started_(false),
       joined_(false),
-      tid_(0),
+      pthread_id_(0),
       func_(func),
-      wg_(wg);
+      wg_(1)
 {
 }
 
 Thread::~Thread()
 {
     if (started_ && !joined_) {
-        pthread_detach(tid_);
+        pthread_detach(pthread_id_);
     }
 }
 
 void Thread::Start()
 {
-    ThreadData* data = new ThreadData(tid_, wg_, func_);
-    if (pthread_create(tid_, NULL, ThreadRoutine, data)) {
+    ThreadData* data = new ThreadData(func_, &wg_);
+    if (pthread_create(&pthread_id_, NULL, &ThreadRoutine, data)) {
         started_ = true;
     }
 }
 
-int Thread::Join()
+void Thread::Join()
 {
-    pthread_join(tid_, NULL);
+    pthread_join(pthread_id_, NULL);
     joined_ = true;
 }
 
 }
+

@@ -2,10 +2,10 @@
 
 namespace levent
 {
-WaitGroup::WaitGroup()
+WaitGroup::WaitGroup(unsigned int count)
             :mutex_(),
              cond_(mutex_),
-             count_(0)
+             count_(count)
 {
 }
 

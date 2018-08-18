@@ -10,7 +10,7 @@ namespace levent
 class WaitGroup : public boost::noncopyable
 {
 public:
-    WaitGroup();
+    WaitGroup(unsigned int count);
 
     ~WaitGroup();
 
