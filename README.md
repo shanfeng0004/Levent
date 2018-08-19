@@ -3,3 +3,5 @@
 - select/epoll/kqueue
 - nonblock
 - tcp/http
+- timerfd
+- inotify
