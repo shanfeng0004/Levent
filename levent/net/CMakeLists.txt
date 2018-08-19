@@ -8,7 +8,3 @@ install(TARGETS levent_net DESTINATION lib)
 
 file(GLOB HEADERS "*.h")
 install(FILES ${HEADERS} DESTINATION include/levent/net)
-
-# if(NOT CMAKE_BUILD_NO_EXAMPLES)
-#   add_subdirectory(tests)
-# endif()

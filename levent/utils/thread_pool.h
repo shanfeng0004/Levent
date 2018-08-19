@@ -1,5 +1,5 @@
-#ifndef _LEVENT_THREAD_POOL_H__
-#define _LEVENT_THREAD_POOL_H__
+#ifndef _LEVENT_UTILS_THREAD_POOL_H__
+#define _LEVENT_UTILS_THREAD_POOL_H__
 
 #include <deque>
 #include <map>
@@ -43,4 +43,4 @@ private:
 
 }
 
-#endif // _LEVENT_THREAD_POOL_H__
+#endif // _LEVENT_UTILS_THREAD_POOL_H__

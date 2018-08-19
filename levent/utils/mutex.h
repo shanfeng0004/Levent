@@ -1,5 +1,5 @@
-#ifndef _LEVENT_MUTEX_H__
-#define _LEVENT_MUTEX_H__
+#ifndef _LEVENT_UTILS_MUTEX_H__
+#define _LEVENT_UTILS_MUTEX_H__
 
 #include <boost/noncopyable.hpp>
 #include <pthread.h>
@@ -59,4 +59,4 @@ private:
 
 }
 
-#endif // _LEVENT_MUTEX_H__
+#endif // _LEVENT_UTILS_MUTEX_H__

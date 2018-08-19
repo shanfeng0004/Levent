@@ -1,5 +1,5 @@
-#ifndef _LEVENT_THREAD_H__
-#define _LEVENT_THREAD_H__
+#ifndef _LEVENT_UTILS_THREAD_H__
+#define _LEVENT_UTILS_THREAD_H__
 
 #include <pthread.h>
 
@@ -38,4 +38,4 @@ private:
 
 }
 
-#endif // _LEVENT_THREAD_H__
+#endif // _LEVENT_UTILS_THREAD_H__

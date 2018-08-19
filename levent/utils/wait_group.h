@@ -1,5 +1,5 @@
-#ifndef _LEVENT_WAIT_GROUP_H__
-#define _LEVENT_WAIT_GROUP_H__
+#ifndef _LEVENT_UTILS_WAIT_GROUP_H__
+#define _LEVENT_UTILS_WAIT_GROUP_H__
 
 #include <levent/utils/mutex.h>
 #include <levent/utils/condition.h>
@@ -28,4 +28,4 @@ private:
 
 }
 
-#endif // _LEVENT_WAIT_GROUP_H__
+#endif // _LEVENT_UTILS_WAIT_GROUP_H__

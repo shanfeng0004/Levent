@@ -1,5 +1,5 @@
-#ifndef _LEVENT_CONDITION_H__
-#define _LEVENT_CONDITION_H__
+#ifndef _LEVENT_UTILS_CONDITION_H__
+#define _LEVENT_UTILS_CONDITION_H__
 
 #include <boost/noncopyable.hpp>
 #include <pthread.h>
@@ -48,4 +48,4 @@ private:
 
 }
 
-#endif // _LEVENT_CONDITION_H__
+#endif // _LEVENT_UTILS_CONDITION_H__
