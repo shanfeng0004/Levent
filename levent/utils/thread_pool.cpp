@@ -74,6 +74,8 @@ void ThreadPool::runInThread()
                 not_full_.Notice();
             }
         }
+
+        // do job
         if (t) {
             t();
         }
