@@ -2,7 +2,6 @@
 #define _LEVENT_NET_CONDITION_H__
 
 #include <boost/function.hpp>
-#include <boost/noncopyable.hpp>
 
 namespace levent
 {
@@ -10,9 +9,7 @@ namespace levent
 class EventLoop : public boost::noncopyable
 {
 public:
-    typedef boost::function<void ()> AcceptCallback;
-    typedef boost::function<void ()> ReadCallback;
-    typedef boost::function<void ()> WriteCallback;
+    typedef boost::function<void ()> EventCallback;
 
     EventLoop();
 
@@ -27,9 +24,9 @@ public:
     void Loop();
 
 private:
-    AcceptCallback accept_cb_; 
-    ReadCallback read_cb_;
-    WriteCallback write_cb_;
+    EventCallback accept_cb_; 
+    EventCallback read_cb_;
+    EventCallback write_cb_;
 };
 
 }
