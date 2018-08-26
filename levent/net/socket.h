@@ -4,27 +4,19 @@
 namespace levent
 {
 
-class Socket : public boost::noncopyable
-{
-public:
-    Socket();
+int Listen();
 
-    ~Socket();
+int Accept(int fd);
 
-    static int Listen();
+int Connect();
 
-    static int Accept(int fd);
+int Read();
 
-    static int Connect();
+int Write();
 
-    static int Read();
+int Close();
 
-    static int Write();
-
-    static int Close();
-
-    static int ShutDown();
-};
+int ShutDown();
 
 }
 

@@ -3,14 +3,6 @@
 namespace levent
 {
 
-Socket::Socket()
-{
-}
-
-Socket::~Socket()
-{
-}
-
 int Listen()
 {
 }
