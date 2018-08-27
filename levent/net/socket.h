@@ -3,6 +3,8 @@
 
 namespace levent
 {
+namespace socket
+{
 
 int Listen();
 
@@ -18,6 +20,7 @@ int Close();
 
 int ShutDown();
 
+}
 }
 
 #endif // _LEVENT_NET_SOCKET_H__

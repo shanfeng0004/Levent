@@ -2,6 +2,8 @@
 
 namespace levent
 {
+namespace socket
+{
 
 int Listen()
 {
@@ -32,3 +34,5 @@ int ShutDown()
 }
 
 }
+}
+
