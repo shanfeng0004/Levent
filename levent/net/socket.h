@@ -1,26 +1,36 @@
 #ifndef _LEVENT_NET_SOCKET_H__
 #define _LEVENT_NET_SOCKET_H__
 
+#include <boost/noncopyable.hpp>
+
 namespace levent
 {
-namespace socket
+
+class Socket : public boost::noncopyable
 {
+public:
+    Socket();
 
-int Listen();
+    ~Socket();
 
-int Accept(int fd);
+    int Listen();
 
-int Connect();
+    int Accept(int fd);
 
-int Read();
+    int Connect();
 
-int Write();
+    int Read();
 
-int Close();
+    int Write();
 
-int ShutDown();
+    int Close();
 
-}
+    int ShutDown();
+
+private:
+    const int fd_;
+};
+
 }
 
 #endif // _LEVENT_NET_SOCKET_H__

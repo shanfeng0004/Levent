@@ -4,32 +4,46 @@ namespace levent
 {
 namespace socket
 {
-
-int Listen()
+Socket::Socket(const int fd)
+         : fd_(fd)
 {
 }
 
-int Accept(int fd)
+Socket::~Socket()
 {
 }
 
-int Connect()
+int Socket::Listen()
+{
+    int ret = ::listen(sockfd, SOMAXCONN);
+    if (ret != 0) {
+        LOG(ERROR) << "listen error:" << ret;
+    }
+    
+    return ret;
+}
+
+int Socket::Accept(int fd)
 {
 }
 
-int Read()
+int Socket::Connect()
 {
 }
 
-int Write()
+int Socket::Read()
 {
 }
 
-int Close()
+int Socket::Write()
 {
 }
 
-int ShutDown()
+int Socket::Close()
+{
+}
+
+int Socket::ShutDown()
 {
 }
 
