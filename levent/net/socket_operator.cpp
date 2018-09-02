@@ -71,4 +71,18 @@ int ShutDown(int sock_fd, int how)
     }
 }
 
+void SetReuseAddr(int sock_fd)
+{
+	int option = 1;
+  	::setsockopt(sock_fd, SOL_SOCKET, SO_REUSEADDR, &option,
+				 static_cast<socklen_t>(sizeof option));
+}
+
+void SetNonBlock(int sock_fd)
+{
+	int flags = ::fcntl(sockfd, F_GETFL, 0);
+  	flags |= O_NONBLOCK;
+  	::fcntl(sockfd, F_SETFL, flags);
+}
+
 }
