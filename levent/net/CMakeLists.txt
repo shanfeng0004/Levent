@@ -1,4 +1,5 @@
 set(base_SRCS
+    socket_operator.cpp
   )
 
 add_library(levent_net ${base_SRCS})
